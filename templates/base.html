@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    </head>
+    <body>
+        <div id="header">
+            <a href="{{url_for('home')}}">
+            <div id="title" class="text">
+                Application
+            </div>
+            </a>
+            {% if not 'logged_in' in session %}
+            <div id="to_right">
+                <a href="{{url_for('login')}}"><div id="box" class="text">Login</div></a>
+                <a href="{{url_for('register')}}"><div id="box" class="text">Register</div></a>
+            </div>
+            {% else %}
+            <div class="text">{{session['username']}}</div>
+            <div id="to_right">
+                <a href="{{url_for('logout')}}"><div id="box" class="text">Logout</div></a>
+            </div>
+            {% endif %}
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        <div class = "flashed">
+            {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+                  {% for message in messages %}  
+                       <div class="text">{{ message }}</div> 
+                  {% endfor %}  
+            {% endif %}  
+         {% endwith %}  
+        </div>
+    </body>  
+
+</html>

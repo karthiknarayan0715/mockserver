@@ -1,0 +1,114 @@
+*
+{
+    padding: 5px;
+}
+body
+{
+    background-color: #1A1A2E;
+}
+.text
+{
+    color: white;
+}
+a
+{
+    color: white;
+    text-decoration: none;
+}
+#header .text
+{
+    display: inline;    
+}
+#box
+{
+    border: 1px solid white;
+    padding: 5px 20px 5px 20px;
+    margin-right: 10px;
+}
+#box:hover
+{
+    border: 1px solid thistle;
+}
+
+#title
+{
+    font-size: 20px;
+    padding: 2px;
+}
+#to_right
+{
+    position: relative;
+    float: right;
+}
+#form
+{
+    padding: 30px 0px 30px 0px;
+    margin: 100px 500px 0px 500px;
+    background-color: #16213E;
+    text-align: center;
+}
+.flashed
+{
+    text-align: center;
+}
+
+#header
+{
+    padding-bottom: 40px;
+}
+#newpost input
+{
+    margin: 10px;
+}
+input[type="file"]
+{
+    width: 300px;
+    height: 30px;
+    background-color: white;
+}
+#container
+{
+    padding: 10px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #16213E;
+}
+
+#container #post
+{
+    background-color: #0F3460;
+    margin: 10px;
+}
+#container .text{
+    text-align: center;
+}
+
+#container div img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+}
+
+#container #part
+{
+    margin: 10px 10px 50px 10px;
+    padding: 20px;
+    background-color: #0F3460;
+}
+#part #link
+{
+    padding: 20px;
+    background-color: #EE4540;
+}
+table
+{
+    width: 100%;
+    border: 1px solid white;
+}
+th, td{
+    border: 1px solid white;
+}

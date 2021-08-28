@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="form">
+    <form method="POST">
+        <input type="text" name="db_name" placeholder="Database Name">
+        <input type="submit" name="addcolumn" value="Add A field"><br><br>
+        {% for i in range(option) %}
+            <input type="text" name={{i}} placeholder="Field {{i}}"><input type="submit" name="removecol" value="-"><br><br>
+        {% endfor %}
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

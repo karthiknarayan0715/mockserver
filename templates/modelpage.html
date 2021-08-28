@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="header">
+    <a href="/{{server['name']}}/models/{{model['model_name']}}/add_data"><div id="box" class="text">Add data</div></a>
+</div>
+<div id="container">
+    <div class="text">{{model['name']}}</div>
+    <table>
+        <tr>
+            {% for field in fields %}
+                <th><div class="text">{{field['field']}}</div></th>
+            {% endfor %}
+        </tr>
+        {% for i in range(value) %}
+        
+        <tr>
+        {% for field_element in data %}      
+            {% if field_element[0] == i %}
+            <td><div class="text">{{field_element[1]}}</div></td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+
+</div>
+{% endblock %}

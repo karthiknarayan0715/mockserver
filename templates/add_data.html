@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="form">
+    <form method="POST">
+        {% for field in fields %}
+            <div class="text">{{field['field']}}</div><input type="text" placeholder="{{field['field']}}" name="{{field['id']}}">
+        {% endfor %}
+        <input type="submit" value="Add data!" name="submit">
+    </form>
+</div>
+{% endblock %}

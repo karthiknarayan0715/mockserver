@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="container">
+        <div class="text">{{server['name']}}</div>
+        <a href="/{{server['name']}}/new_model"><div class="text">New model</div></a>
+        <a href="/{{server['name']}}/new_route"><div class="text">New route</div></a>
+        <div id="part">
+        <div class="text" style="text-decoration: underline;">Existing models</div>
+        {% for model in models %}
+        <a href="/{{server['name']}}/models/{{model['model_name']}}" style="display: inline;">
+        <div id="link">
+            <div class="text" style="display: inline;">{{model['model_name']}}</div>
+            <form method="POST">
+                <input type="submit" value="delete model" name="{{model['id']}}">
+            </form>
+        </div>
+        </a>
+        {% endfor %}
+        </div>
+        <div id="part">
+        <div class="text" style="text-decoration: underline;">Existing routes</div>
+        {% for route in routes %}
+        <a href="/{{server['name']}}/routes/{{route['name']}}" style="display: inline;">
+        <div id="link">
+            <div class="text" style="display: inline;">{{server['name']}}/{{route['name']}}</div>
+            <form method="POST">
+                <input type="submit" value="delete route" name="{{route['id']}}">
+            </form>
+        </div>
+        </a>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

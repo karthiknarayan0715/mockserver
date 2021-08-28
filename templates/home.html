@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="header">
+    <a href="{{url_for('newserver')}}">
+        <div id="box" class="text">New server</div>
+    </a>
+</div>
+
+<div id="container">
+    {% for server in servers %}
+        <a href="/{{server['name']}}"><div class="text">{{server['name']}}</div></a>        
+    {% endfor %}
+</div>
+{% endblock %}
